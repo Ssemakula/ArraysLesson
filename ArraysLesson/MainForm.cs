@@ -66,5 +66,12 @@ namespace ArraysLesson
             stackLesson.MdiParent = this;
             stackLesson.Show();
         }
+
+        private void tsb_List_Click(object sender, EventArgs e)
+        {
+            ListLearn listLearn = new ListLearn();
+            listLearn.MdiParent = this;
+            listLearn.Show();
+        }
     }
 }

@@ -37,12 +37,14 @@
             tsnSortedList = new ToolStripButton();
             tsb_Queue = new ToolStripButton();
             tsb_Stack = new ToolStripButton();
+            toolStripSeparator1 = new ToolStripSeparator();
+            tsb_List = new ToolStripButton();
             toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // toolStrip1
             // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { tsb_SimpleArray, tsb_Arraylist, tsb_Exit, tsb_Hashtable, tsnSortedList, tsb_Queue, tsb_Stack });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { tsb_SimpleArray, tsb_Arraylist, tsb_Exit, tsb_Hashtable, tsnSortedList, tsb_Queue, tsb_Stack, toolStripSeparator1, tsb_List });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(1065, 25);
@@ -120,6 +122,21 @@
             tsb_Stack.Text = "Stack";
             tsb_Stack.Click += tsb_Stack_Click;
             // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(6, 25);
+            // 
+            // tsb_List
+            // 
+            tsb_List.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            tsb_List.Image = (Image)resources.GetObject("tsb_List.Image");
+            tsb_List.ImageTransparentColor = Color.Magenta;
+            tsb_List.Name = "tsb_List";
+            tsb_List.Size = new Size(29, 22);
+            tsb_List.Text = "List";
+            tsb_List.Click += tsb_List_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -149,5 +166,7 @@
         private ToolStripButton tsnSortedList;
         private ToolStripButton tsb_Queue;
         private ToolStripButton tsb_Stack;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripButton tsb_List;
     }
 }
