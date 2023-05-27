@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace ArraysLesson
 {
-    public partial class SortedListLearn : Form
+    public partial class SortedListGen : Form
     {
-        SortedList sortedList = new SortedList(); //System.Collections
-        public SortedListLearn()
+        SortedList<string, string> sortedList = new SortedList<string, string>();
+        public SortedListGen()
         {
             InitializeComponent();
         }
@@ -41,7 +41,7 @@ namespace ArraysLesson
             //This will be used to display table
             ClearOutput();
 
-            foreach (DictionaryEntry item in sortedList)
+            foreach (KeyValuePair<string, string> item in sortedList)
             {
                 this.ls_Key.Items.Add(item.Key.ToString());
                 this.ls_Value.Items.Add(item.Value.ToString());
@@ -94,7 +94,7 @@ namespace ArraysLesson
                 if (sortedList.ContainsValue(ValueValue))
                 {
                     //MessageBox.Show("Found");
-                    foreach (DictionaryEntry item in sortedList)
+                    foreach (KeyValuePair<string, string> item in sortedList)
                     {
                         if (item.Value.ToString() == ValueValue)
                         {
@@ -120,7 +120,7 @@ namespace ArraysLesson
             {
                 if (int.TryParse(KeyValue, out IndexVal) && IndexVal < sortedList.Count)
                 {
-                    Index = sortedList.GetByIndex(IndexVal);
+                    Index = sortedList.GetValueAtIndex(IndexVal);
                     this.txt_ValueValue.Text = Index.ToString();
                 }
                 else
@@ -183,7 +183,7 @@ namespace ArraysLesson
             for (int i = 0; i < sortedList.Count; i++)
             {
                 this.ls_Key.Items.Add(i);
-                this.ls_Value.Items.Add(sortedList.GetByIndex(i)); // The list is presorted so order is changed
+                this.ls_Value.Items.Add(sortedList.GetValueAtIndex(i)); // The list is presorted so order is changed
             }
         }
 
@@ -191,7 +191,7 @@ namespace ArraysLesson
         {
             ClearOutput();
 
-            foreach (DictionaryEntry item in sortedList)
+            foreach (var item in sortedList)
             {
                 this.ls_Key.Items.Add((string)item.Key);
                 this.ls_Value.Items.Add(item.Value);
@@ -200,22 +200,31 @@ namespace ArraysLesson
 
         private void btn_CopyTo_Click(object sender, EventArgs e)
         {
-            object[] target = new object[sortedList.Count];
-            sortedList.CopyTo(target, 0);
-            /*sortedList.Keys.CopyTo(target, 0); // Copy keys alone
-            sortedList.Values.CopyTo(target, 0); // Copy values alone*/
+            SortedList<string, string> target = new(sortedList); //Instant copy
 
-            this.ls_Key.Items.Add("_________________________________________");
-            this.ls_Value.Items.Add("_________________________________________");
+            KeyValuePair<string,  string >[] target2 = new KeyValuePair<string, string>[sortedList.Count];
+            //sortedList.TryAdd(target, 0);
+            /*sortedList.Keys.CopyTo(target.Keys, 0); // Copy keys alone
+            sortedList.Values.CopyTo(target.Values, 0); // Copy values alone*/
 
-            foreach (DictionaryEntry item in target)
+            this.ls_Value.Items.Add("_______________Target_______________");
+            this.ls_Key.Items.Add("_______________Target_______________");
+            target2 = sortedList.ToArray(); //Copy after definition
+
+            foreach (KeyValuePair<string, string> item in target) // For demonstration of diffrent use
             {
-                this.ls_Key.Items.Add((string)item.Key);
-                this.ls_Value.Items.Add((string)item.Value);
+                this.ls_Value.Items.Add(item.Value);
+                this.ls_Key.Items.Add(item.Key);
+            }
+            this.ls_Value.Items.Add("_______________Target2_______________");
+            this.ls_Key.Items.Add("_______________Target2_______________");
+            foreach (KeyValuePair<string, string> item in target2) // For demonstration of diffrent use
+            {
+                this.ls_Value.Items.Add(item.Value);
+                this.ls_Key.Items.Add(item.Key);
             }
             MessageBox.Show("Press to continue...");
             DisplayTable();
-
         }
 
         private void btn_SearchKey_Click(object sender, EventArgs e)
@@ -232,6 +241,16 @@ namespace ArraysLesson
             {
                 //Do things with value (not sure how)
             }
+            else
+                CommonProcs.Beep();
+        }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            sortedList.Clear();
+            ClearInput();
+            ClearOutput();
+            DisplayTable();
         }
     }
 }

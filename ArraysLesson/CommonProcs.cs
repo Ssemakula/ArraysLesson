@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ArraysLesson
 {
-    internal class CommonProcs
+    public class CommonProcs
     {
         public static void Beep()
         {

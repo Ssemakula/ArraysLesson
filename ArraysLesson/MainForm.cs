@@ -73,5 +73,40 @@ namespace ArraysLesson
             listLearn.MdiParent = this;
             listLearn.Show();
         }
+
+        private void tsb_Dictionary_Click(object sender, EventArgs e)
+        {
+            DictionaryLearn dictionaryLearn = new DictionaryLearn();
+            dictionaryLearn.MdiParent = this;
+            dictionaryLearn.Show();
+        }
+
+        private void tsb_SortedDict_Click(object sender, EventArgs e)
+        {
+            SortedDictLearn sortedDictLearn = new SortedDictLearn();
+            sortedDictLearn.MdiParent = this;
+            sortedDictLearn.Show();
+        }
+
+        private void tst_SortedListGen_Click(object sender, EventArgs e)
+        {
+            SortedListGen sortedListGen = new SortedListGen();
+            sortedListGen.MdiParent = this;
+            sortedListGen.Show();
+        }
+
+        private void tsb_QueueGen_Click(object sender, EventArgs e)
+        {
+            QueueGenLesson queueGenLesson = new QueueGenLesson();
+            queueGenLesson.MdiParent = this;
+            queueGenLesson.Show();
+        }
+
+        private void tsb_StackGen_Click(object sender, EventArgs e)
+        {
+            StackGenLesson stackGenLesson = new StackGenLesson();
+            stackGenLesson.MdiParent = this;
+            stackGenLesson.Show();
+        }
     }
 }

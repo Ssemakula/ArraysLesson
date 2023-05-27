@@ -39,12 +39,17 @@
             tsb_Stack = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
             tsb_List = new ToolStripButton();
+            tsb_Dictionary = new ToolStripButton();
+            tsb_SortedDict = new ToolStripButton();
+            tst_SortedListGen = new ToolStripButton();
+            tsb_QueueGen = new ToolStripButton();
+            tsb_StackGen = new ToolStripButton();
             toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // toolStrip1
             // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { tsb_SimpleArray, tsb_Arraylist, tsb_Exit, tsb_Hashtable, tsnSortedList, tsb_Queue, tsb_Stack, toolStripSeparator1, tsb_List });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { tsb_SimpleArray, tsb_Arraylist, tsb_Exit, tsb_Hashtable, tsnSortedList, tsb_Queue, tsb_Stack, toolStripSeparator1, tsb_List, tsb_Dictionary, tsb_SortedDict, tst_SortedListGen, tsb_QueueGen, tsb_StackGen });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(1065, 25);
@@ -137,6 +142,56 @@
             tsb_List.Text = "List";
             tsb_List.Click += tsb_List_Click;
             // 
+            // tsb_Dictionary
+            // 
+            tsb_Dictionary.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            tsb_Dictionary.Image = (Image)resources.GetObject("tsb_Dictionary.Image");
+            tsb_Dictionary.ImageTransparentColor = Color.Magenta;
+            tsb_Dictionary.Name = "tsb_Dictionary";
+            tsb_Dictionary.Size = new Size(65, 22);
+            tsb_Dictionary.Text = "Dictionary";
+            tsb_Dictionary.Click += tsb_Dictionary_Click;
+            // 
+            // tsb_SortedDict
+            // 
+            tsb_SortedDict.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            tsb_SortedDict.Image = (Image)resources.GetObject("tsb_SortedDict.Image");
+            tsb_SortedDict.ImageTransparentColor = Color.Magenta;
+            tsb_SortedDict.Name = "tsb_SortedDict";
+            tsb_SortedDict.Size = new Size(69, 22);
+            tsb_SortedDict.Text = "Sorted Dict";
+            tsb_SortedDict.Click += tsb_SortedDict_Click;
+            // 
+            // tst_SortedListGen
+            // 
+            tst_SortedListGen.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            tst_SortedListGen.Image = (Image)resources.GetObject("tst_SortedListGen.Image");
+            tst_SortedListGen.ImageTransparentColor = Color.Magenta;
+            tst_SortedListGen.Name = "tst_SortedListGen";
+            tst_SortedListGen.Size = new Size(66, 22);
+            tst_SortedListGen.Text = "Sorted List";
+            tst_SortedListGen.Click += tst_SortedListGen_Click;
+            // 
+            // tsb_QueueGen
+            // 
+            tsb_QueueGen.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            tsb_QueueGen.Image = (Image)resources.GetObject("tsb_QueueGen.Image");
+            tsb_QueueGen.ImageTransparentColor = Color.Magenta;
+            tsb_QueueGen.Name = "tsb_QueueGen";
+            tsb_QueueGen.Size = new Size(46, 22);
+            tsb_QueueGen.Text = "Queue";
+            tsb_QueueGen.Click += tsb_QueueGen_Click;
+            // 
+            // tsb_StackGen
+            // 
+            tsb_StackGen.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            tsb_StackGen.Image = (Image)resources.GetObject("tsb_StackGen.Image");
+            tsb_StackGen.ImageTransparentColor = Color.Magenta;
+            tsb_StackGen.Name = "tsb_StackGen";
+            tsb_StackGen.Size = new Size(39, 22);
+            tsb_StackGen.Text = "Stack";
+            tsb_StackGen.Click += tsb_StackGen_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -144,12 +199,11 @@
             ClientSize = new Size(1065, 703);
             ControlBox = false;
             Controls.Add(toolStrip1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
             IsMdiContainer = true;
             KeyPreview = true;
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Main";
+            Text = "Arrays & Lists";
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             ResumeLayout(false);
@@ -168,5 +222,10 @@
         private ToolStripButton tsb_Stack;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripButton tsb_List;
+        private ToolStripButton tsb_Dictionary;
+        private ToolStripButton tsb_SortedDict;
+        private ToolStripButton tst_SortedListGen;
+        private ToolStripButton tsb_QueueGen;
+        private ToolStripButton tsb_StackGen;
     }
 }

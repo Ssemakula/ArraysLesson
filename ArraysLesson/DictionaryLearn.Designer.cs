@@ -1,6 +1,6 @@
 ﻿namespace ArraysLesson
 {
-    partial class HashTable
+    partial class DictionaryLearn
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            btn_Close = new Button();
+            ls_Value = new ListBox();
+            ls_Key = new ListBox();
             pnl_Controls = new Panel();
+            btn_Sort = new Button();
             lbl_ValueValue = new Label();
             lbl_KeyValue = new Label();
             txt_ValueValue = new TextBox();
@@ -44,15 +48,42 @@
             btn_Delete = new Button();
             btn_Write = new Button();
             btn_Read = new Button();
-            btn_AddHashItems = new Button();
-            ls_Key = new ListBox();
-            ls_Value = new ListBox();
-            btn_Close = new Button();
+            btn_AddItems = new Button();
             pnl_Controls.SuspendLayout();
             SuspendLayout();
             // 
+            // btn_Close
+            // 
+            btn_Close.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btn_Close.Location = new Point(442, 550);
+            btn_Close.Name = "btn_Close";
+            btn_Close.Size = new Size(75, 23);
+            btn_Close.TabIndex = 7;
+            btn_Close.Text = "Exit";
+            btn_Close.UseVisualStyleBackColor = true;
+            btn_Close.Click += btn_Close_Click;
+            // 
+            // ls_Value
+            // 
+            ls_Value.FormattingEnabled = true;
+            ls_Value.ItemHeight = 15;
+            ls_Value.Location = new Point(203, 212);
+            ls_Value.Name = "ls_Value";
+            ls_Value.Size = new Size(315, 334);
+            ls_Value.TabIndex = 6;
+            // 
+            // ls_Key
+            // 
+            ls_Key.FormattingEnabled = true;
+            ls_Key.ItemHeight = 15;
+            ls_Key.Location = new Point(12, 212);
+            ls_Key.Name = "ls_Key";
+            ls_Key.Size = new Size(166, 334);
+            ls_Key.TabIndex = 5;
+            // 
             // pnl_Controls
             // 
+            pnl_Controls.Controls.Add(btn_Sort);
             pnl_Controls.Controls.Add(lbl_ValueValue);
             pnl_Controls.Controls.Add(lbl_KeyValue);
             pnl_Controls.Controls.Add(txt_ValueValue);
@@ -68,11 +99,20 @@
             pnl_Controls.Controls.Add(btn_Delete);
             pnl_Controls.Controls.Add(btn_Write);
             pnl_Controls.Controls.Add(btn_Read);
-            pnl_Controls.Controls.Add(btn_AddHashItems);
-            pnl_Controls.Location = new Point(17, 10);
+            pnl_Controls.Controls.Add(btn_AddItems);
+            pnl_Controls.Location = new Point(12, 12);
             pnl_Controls.Name = "pnl_Controls";
             pnl_Controls.Size = new Size(506, 179);
-            pnl_Controls.TabIndex = 0;
+            pnl_Controls.TabIndex = 4;
+            // 
+            // btn_Sort
+            // 
+            btn_Sort.Location = new Point(415, 71);
+            btn_Sort.Name = "btn_Sort";
+            btn_Sort.Size = new Size(75, 23);
+            btn_Sort.TabIndex = 18;
+            btn_Sort.Text = "Sort";
+            btn_Sort.UseVisualStyleBackColor = true;
             // 
             // lbl_ValueValue
             // 
@@ -140,12 +180,13 @@
             // 
             // btn_CopyTo
             // 
-            btn_CopyTo.Location = new Point(291, 71);
+            btn_CopyTo.Location = new Point(317, 71);
             btn_CopyTo.Name = "btn_CopyTo";
             btn_CopyTo.Size = new Size(75, 23);
             btn_CopyTo.TabIndex = 9;
             btn_CopyTo.Text = "Copy to";
             btn_CopyTo.UseVisualStyleBackColor = true;
+            btn_CopyTo.Click += btn_CopyTo_Click;
             // 
             // btn_Clear
             // 
@@ -155,6 +196,7 @@
             btn_Clear.TabIndex = 8;
             btn_Clear.Text = "Clear";
             btn_Clear.UseVisualStyleBackColor = true;
+            btn_Clear.Click += btn_Clear_Click;
             // 
             // btn_ForEachHarsh
             // 
@@ -176,7 +218,7 @@
             // 
             // btn_Delete
             // 
-            btn_Delete.Location = new Point(334, 33);
+            btn_Delete.Location = new Point(317, 33);
             btn_Delete.Name = "btn_Delete";
             btn_Delete.Size = new Size(75, 23);
             btn_Delete.TabIndex = 5;
@@ -186,7 +228,7 @@
             // 
             // btn_Write
             // 
-            btn_Write.Location = new Point(253, 33);
+            btn_Write.Location = new Point(219, 33);
             btn_Write.Name = "btn_Write";
             btn_Write.Size = new Size(75, 23);
             btn_Write.TabIndex = 4;
@@ -196,7 +238,7 @@
             // 
             // btn_Read
             // 
-            btn_Read.Location = new Point(172, 33);
+            btn_Read.Location = new Point(121, 33);
             btn_Read.Name = "btn_Read";
             btn_Read.Size = new Size(75, 23);
             btn_Read.TabIndex = 3;
@@ -204,60 +246,28 @@
             btn_Read.UseVisualStyleBackColor = true;
             btn_Read.Click += btn_Read_Click;
             // 
-            // btn_AddHashItems
+            // btn_AddItems
             // 
-            btn_AddHashItems.Location = new Point(88, 33);
-            btn_AddHashItems.Name = "btn_AddHashItems";
-            btn_AddHashItems.Size = new Size(78, 23);
-            btn_AddHashItems.TabIndex = 0;
-            btn_AddHashItems.Text = "Add Items";
-            btn_AddHashItems.UseVisualStyleBackColor = true;
-            btn_AddHashItems.Click += btn_AddHashItems_Click;
+            btn_AddItems.Location = new Point(20, 33);
+            btn_AddItems.Name = "btn_AddItems";
+            btn_AddItems.Size = new Size(78, 23);
+            btn_AddItems.TabIndex = 0;
+            btn_AddItems.Text = "Add Items";
+            btn_AddItems.UseVisualStyleBackColor = true;
+            btn_AddItems.Click += btn_AddItems_Click;
             // 
-            // ls_Key
-            // 
-            ls_Key.FormattingEnabled = true;
-            ls_Key.ItemHeight = 15;
-            ls_Key.Location = new Point(27, 210);
-            ls_Key.Name = "ls_Key";
-            ls_Key.Size = new Size(156, 334);
-            ls_Key.TabIndex = 1;
-            // 
-            // ls_Value
-            // 
-            ls_Value.FormattingEnabled = true;
-            ls_Value.ItemHeight = 15;
-            ls_Value.Location = new Point(208, 210);
-            ls_Value.Name = "ls_Value";
-            ls_Value.Size = new Size(315, 334);
-            ls_Value.TabIndex = 2;
-            // 
-            // btn_Close
-            // 
-            btn_Close.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btn_Close.Location = new Point(446, 555);
-            btn_Close.Name = "btn_Close";
-            btn_Close.Size = new Size(75, 23);
-            btn_Close.TabIndex = 3;
-            btn_Close.Text = "Exit";
-            btn_Close.UseVisualStyleBackColor = true;
-            btn_Close.Click += btn_Close_Click;
-            // 
-            // HashTable
+            // DictionaryLearn
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(531, 577);
-            ControlBox = false;
+            ClientSize = new Size(521, 576);
             Controls.Add(btn_Close);
             Controls.Add(ls_Value);
             Controls.Add(ls_Key);
             Controls.Add(pnl_Controls);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "HashTable";
-            ShowIcon = false;
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "HashTable";
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            Name = "DictionaryLearn";
+            Text = "DictionaryLearn";
             pnl_Controls.ResumeLayout(false);
             pnl_Controls.PerformLayout();
             ResumeLayout(false);
@@ -265,7 +275,15 @@
 
         #endregion
 
+        private Button btn_Close;
+        private ListBox ls_Value;
+        private ListBox ls_Key;
         private Panel pnl_Controls;
+        private Button btn_Sort;
+        private Label lbl_ValueValue;
+        private Label lbl_KeyValue;
+        private TextBox txt_ValueValue;
+        private TextBox txt_KeyValue;
         private TextBox txt_FindValue;
         private Label lbl_FindValue;
         private TextBox txt_FindKey;
@@ -277,13 +295,6 @@
         private Button btn_Delete;
         private Button btn_Write;
         private Button btn_Read;
-        private Button btn_AddHashItems;
-        private ListBox ls_Key;
-        private ListBox ls_Value;
-        private Button btn_Close;
-        private Label lbl_ValueValue;
-        private Label lbl_KeyValue;
-        private TextBox txt_ValueValue;
-        private TextBox txt_KeyValue;
+        private Button btn_AddItems;
     }
 }
