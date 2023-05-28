@@ -108,5 +108,12 @@ namespace ArraysLesson
             stackGenLesson.MdiParent = this;
             stackGenLesson.Show();
         }
+
+        private void tsb_LinkedList_Click(object sender, EventArgs e)
+        {
+            LinkedListLesson listLesson = new LinkedListLesson();
+            listLesson.MdiParent = this;
+            listLesson.Show();
+        }
     }
 }

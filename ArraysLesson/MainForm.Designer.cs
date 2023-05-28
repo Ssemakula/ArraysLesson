@@ -44,12 +44,14 @@
             tst_SortedListGen = new ToolStripButton();
             tsb_QueueGen = new ToolStripButton();
             tsb_StackGen = new ToolStripButton();
+            tsb_LinkedList = new ToolStripButton();
+            toolStripSeparator2 = new ToolStripSeparator();
             toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // toolStrip1
             // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { tsb_SimpleArray, tsb_Arraylist, tsb_Exit, tsb_Hashtable, tsnSortedList, tsb_Queue, tsb_Stack, toolStripSeparator1, tsb_List, tsb_Dictionary, tsb_SortedDict, tst_SortedListGen, tsb_QueueGen, tsb_StackGen });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { tsb_SimpleArray, tsb_Arraylist, tsb_Exit, tsb_Hashtable, tsnSortedList, tsb_Queue, tsb_Stack, toolStripSeparator1, tsb_List, tsb_Dictionary, tsb_SortedDict, tst_SortedListGen, tsb_QueueGen, tsb_StackGen, toolStripSeparator2, tsb_LinkedList });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(1065, 25);
@@ -192,6 +194,21 @@
             tsb_StackGen.Text = "Stack";
             tsb_StackGen.Click += tsb_StackGen_Click;
             // 
+            // tsb_LinkedList
+            // 
+            tsb_LinkedList.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            tsb_LinkedList.Image = (Image)resources.GetObject("tsb_LinkedList.Image");
+            tsb_LinkedList.ImageTransparentColor = Color.Magenta;
+            tsb_LinkedList.Name = "tsb_LinkedList";
+            tsb_LinkedList.Size = new Size(67, 22);
+            tsb_LinkedList.Text = "Linked List";
+            tsb_LinkedList.Click += tsb_LinkedList_Click;
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(6, 25);
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -227,5 +244,7 @@
         private ToolStripButton tst_SortedListGen;
         private ToolStripButton tsb_QueueGen;
         private ToolStripButton tsb_StackGen;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripButton tsb_LinkedList;
     }
 }

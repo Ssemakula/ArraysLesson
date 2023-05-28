@@ -106,7 +106,7 @@ namespace ArraysLesson
 
             myStack.CopyTo(Target_Obj, 0);
             Target3 = myStack.ToArray();
-            
+
             //ClearOutput();
             this.ls_Value.Items.Add("_______________Target_______________");
             foreach (string item in Target_Obj)
